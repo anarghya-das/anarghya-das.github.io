@@ -1,2 +1,7 @@
-- name: Flutter Deployment
-  uses: jeanluc243/Flutter-Deployment@0.1
+name: Flutter Web
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jeanluc243/Flutter-Deployment@0.1
