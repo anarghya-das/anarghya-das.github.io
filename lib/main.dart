@@ -4,7 +4,6 @@ import 'package:personalWebsite/links.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:universal_html/prefer_universal/js.dart' as js;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'hover_extension.dart';
 
 void main() {
   runApp(MyApp());
@@ -89,8 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(height: 10),
           GestureDetector(
-            onTap: () => js.context.callMethod(
-                'playAudio', new List()..add('assets/sounds/anarghya.mp3')),
+            onTap: () => js.context.callMethod('playAudio',
+                new List()..add('/assets/assets/sounds/anarghya.mp3')),
             child: Text(
               widget.title,
               style: TextStyle(
