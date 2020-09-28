@@ -1,6 +1,6 @@
-# personalWebsite
+# Personal Website
 
-A new Flutter project.
+Created using Flutter for Web.
 
 ## Getting Started
 
