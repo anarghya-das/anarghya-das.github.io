@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
     html.window.open(iconURL, '_blank');
   }
 
-  Widget mainLayout(fontSize, imageRadius) {
+  Widget mainLayout(fontSize, imageRadius, pronounceVisibility) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -97,12 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: invertColor(),
                     fontFamily: 'Gugi'),
               ),
-              IconButton(
-                iconSize: 15,
-                icon: FaIcon(FontAwesomeIcons.volumeUp),
-                onPressed: () => js.context.callMethod('playAudio',
-                    List.filled(1, '/assets/assets/sounds/anarghya.mp3')),
-                color: invertColor(),
+              Visibility(
+                visible: pronounceVisibility,
+                child: IconButton(
+                  iconSize: 16,
+                  icon: FaIcon(FontAwesomeIcons.volumeUp),
+                  onPressed: () => js.context.callMethod('playAudio',
+                      List.filled(1, '/assets/assets/sounds/anarghya.mp3')),
+                  color: invertColor(),
+                ),
               )
             ],
           ),
@@ -173,11 +176,11 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: _backgroundColor,
       body: LayoutBuilder(builder: (context, constraints) {
         if (constraints.maxWidth > 1200) {
-          return mainLayout(100, 80);
+          return mainLayout(100, 80, true);
         } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
-          return mainLayout(50, 50);
+          return mainLayout(50, 50, false);
         } else {
-          return mainLayout(35, 40);
+          return mainLayout(35, 40, false);
         }
       }),
     );
