@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:personalWebsite/links.dart';
+import 'package:personal_website/links.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:universal_html/prefer_universal/js.dart' as js;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -87,17 +87,27 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           SizedBox(height: 10),
-          GestureDetector(
-            onTap: () => js.context.callMethod('playAudio',
-                new List()..add('/assets/assets/sounds/anarghya.mp3')),
-            child: Text(
-              widget.title,
-              style: TextStyle(
-                  fontSize: fontSize, color: invertColor(), fontFamily: 'Gugi'),
-            ),
+          Wrap(
+            alignment: WrapAlignment.center,
+            children: [
+              Text(
+                widget.title,
+                style: TextStyle(
+                    fontSize: fontSize,
+                    color: invertColor(),
+                    fontFamily: 'Gugi'),
+              ),
+              IconButton(
+                iconSize: 15,
+                icon: FaIcon(FontAwesomeIcons.volumeUp),
+                onPressed: () => js.context.callMethod('playAudio',
+                    List.filled(1, '/assets/assets/sounds/anarghya.mp3')),
+                color: invertColor(),
+              )
+            ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Wrap(
+            alignment: WrapAlignment.center,
             children: [
               IconButton(
                 icon: FaIcon(FontAwesomeIcons.github),

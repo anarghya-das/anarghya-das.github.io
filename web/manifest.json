@@ -1,6 +1,6 @@
 {
-    "name": "personalWebsite",
-    "short_name": "personalWebsite",
+    "name": "personal_website",
+    "short_name": "personal_website",
     "icons": [
         {
             "src": "\/icons/favicon-16x16.png",
