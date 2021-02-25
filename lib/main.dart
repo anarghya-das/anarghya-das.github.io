@@ -114,37 +114,32 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               IconButton(
                 icon: FaIcon(FontAwesomeIcons.github),
-                onPressed: () {
-                  openLink(GITHUB);
-                },
+                onPressed: () => openLink(GITHUB),
                 color: invertColor(),
               ),
               IconButton(
                 icon: FaIcon(FontAwesomeIcons.linkedinIn),
-                onPressed: () {
-                  openLink(LINKEDIN);
-                },
+                onPressed: () => openLink(LINKEDIN),
                 color: invertColor(),
               ),
               IconButton(
                 icon: FaIcon(FontAwesomeIcons.dev),
-                onPressed: () {
-                  openLink(DEVPOST);
-                },
+                onPressed: () => openLink(DEVPOST),
                 color: invertColor(),
               ),
               IconButton(
                 icon: FaIcon(FontAwesomeIcons.envelope),
-                onPressed: () {
-                  openLink(EMAIL);
-                },
+                onPressed: () => openLink(EMAIL),
+                color: invertColor(),
+              ),
+              IconButton(
+                icon: FaIcon(FontAwesomeIcons.commentDots),
+                onPressed: () => openLink(MATRIX),
                 color: invertColor(),
               ),
               IconButton(
                 icon: FaIcon(FontAwesomeIcons.file),
-                onPressed: () {
-                  openLink(RESUME);
-                },
+                onPressed: () => openLink(RESUME),
                 color: invertColor(),
               )
             ],
